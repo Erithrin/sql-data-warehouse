@@ -1,4 +1,8 @@
 /*
+==================================
+DDL Script : Create Bronze Tables
+==================================
+
 Scripts : These DDL scripts are used to create tables in the BRONZE schema using the same name
 as source table. 
 Warning : If table exists, the table will be dropped and will be newly created
