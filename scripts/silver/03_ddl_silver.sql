@@ -13,7 +13,7 @@ Warning : If table exists, the table will be dropped and will be newly created
 
 
 
-if exists(select 1 from information_schema.tables where table_name = 'silver.crm_cust_info')
+if object_id('silver.crm_cust_info','U') is not null 
 drop table silver.crm_cust_info;
 go
 
@@ -31,12 +31,13 @@ dwh_create_date datetime2 default getdate()
 
 go
 
-if exists(select 1 from INFORMATION_SCHEMA.tables where table_name = 'silver.crm_prd_info')
+if object_id('silver.crm_prd_info','U') is not null
 drop table silver.crm_prd_info;
 go
 
 create table silver.crm_prd_info (
 prd_id int,
+cat_id nvarchar(50),
 prd_key nvarchar(50),
 prd_nm nvarchar(50),
 prd_cost int,
@@ -47,8 +48,7 @@ dwh_create_date datetime2 default getdate()
 );
 go
 
-
-if exists(select 1 from INFORMATION_SCHEMA.tables where table_name = 'silver.crm_sales_details')
+if object_id('silver.crm_sales_details','U') is not null 
 drop table silver.crm_sales_details;
 go
 
@@ -56,9 +56,9 @@ create table silver.crm_sales_details(
 sls_ord_num nvarchar(50),
 sls_prd_key nvarchar(50),
 sls_cust_id int,
-sls_order_dt int,
-sls_ship_dt int,
-sls_due_dt int,
+sls_order_dt date,
+sls_ship_dt date,
+sls_due_dt date,
 sls_sales int,
 sls_quantity int,
 sls_price int,
@@ -66,7 +66,7 @@ dwh_create_date datetime2 default getdate()
 )
 go
 
-if exists(select 1 from INFORMATION_SCHEMA.tables where table_name = 'silver.erp_cust_az12')
+if object_id('silver.erp_cust_az12','U') is not null 
 drop table silver.erp_cust_az12;
 go
 
@@ -78,8 +78,7 @@ dwh_create_date datetime2 default getdate()
 );
 go
 
-
-if exists(select 1 from INFORMATION_SCHEMA.tables where table_name = 'silver.erp_loc_a101')
+if object_id('silver.erp_loc_a101','U') is not null
 drop table silver.erp_loc_a101;
 go
 
@@ -90,8 +89,7 @@ dwh_create_date datetime2 default getdate()
 );
 go
 
-
-if exists(select 1 from INFORMATION_SCHEMA.tables where table_name = 'silver.erp_px_cat_g1v2')
+if object_id('silver.erp_px_cat_g1v2','U') is not null
 drop table silver.erp_px_cat_g1v2;
 go
 
