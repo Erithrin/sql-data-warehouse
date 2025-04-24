@@ -17,3 +17,7 @@ BRONZE LAYER : File - 01_ddl_bronze, 02_proc_load_bronze
 3. The naming convention for the tables is <source_entity>_<name_of_file>
 4. I have created a stored procedure for truncating all tables and loading the data into bronze tables.
 
+SILVER LAYER : 03_ddl_silver, 04_proc_load_silver
+1. Created new tables for silver schema
+2. Performed data cleansing, standardized/normalized data and performed validations to check correctness of data
+3. Stored procedure to truncate all tables and load all data into Silver tables
