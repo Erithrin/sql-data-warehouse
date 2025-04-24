@@ -6,6 +6,12 @@ I am going to use Notion for project planning, draw.io for drawing the data arch
 
 The source data is coming from 2 systems - CRM and ERP
 
+![image](https://github.com/user-attachments/assets/fc0cc881-09e6-4478-98e8-891ebb52e48b)
+
+
+
+
+
 INITIALIZATION : File - 00_init_database
 1. I have created a new database for this project
 2. Since I have chosen medallion architecture - I created 3 schemas - Bronze, Silver and Gold.
