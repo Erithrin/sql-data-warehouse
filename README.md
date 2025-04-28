@@ -27,3 +27,21 @@ SILVER LAYER : 03_ddl_silver, 04_proc_load_silver
 1. Created new tables for silver schema
 2. Performed data cleansing, standardized/normalized data and performed validations to check correctness of data
 3. Stored procedure to truncate all tables and load all data into Silver tables
+
+GOLD_LAYER: 05_ddl_gold.sql
+1. Creates new views by integrating data from schema tables
+   Steps :
+      Select columns needed from master table
+      Perform left join for other tables
+      Look for duplicates to see if join has introduced no duplicates
+      Data Integration - find which is the master source fr these tables for data integration
+      Rename columns to friendly names
+      Group relevant columns together
+      Create surrogate key - just a row number using row_number()
+      Follow naming convention for view gold.dim_customers
+      Perform quality check
+      If fact table group in the order -  keys - dates - measures
+
+Data flow diagram : 
+   ![image](https://github.com/user-attachments/assets/7a6b5bbe-810d-4c83-856e-1021f6d7c971)
+
